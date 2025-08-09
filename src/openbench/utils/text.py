@@ -1,5 +1,10 @@
 import json
-from inspect_ai.model import ChatMessageUser, ChatMessageAssistant, ChatMessageSystem, ChatMessage
+from inspect_ai.model import (
+    ChatMessageUser,
+    ChatMessageAssistant,
+    ChatMessageSystem,
+    ChatMessage,
+)
 
 """Text processing utilities for openbench.
 
@@ -348,5 +353,6 @@ def str_to_chat_messages(messages_str: str) -> list[ChatMessage]:
     }
     messages = json.loads(messages_str)
     return [
-        message_mapping[message["role"]](content=message["content"]) for message in messages
+        message_mapping[message["role"]](content=message["content"])
+        for message in messages
     ]
