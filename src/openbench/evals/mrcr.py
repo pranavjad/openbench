@@ -26,7 +26,7 @@ def mrcr(needles: int = 2) -> Task:
     return Task(
         dataset=get_dataset(needles=needles),
         solver=generate(),
-        scorer=mrcr_scorer(needles=needles),
+        scorer=mrcr_scorer(),
         name="mrcr",
         config=GenerateConfig(temperature=0.0),
     )
